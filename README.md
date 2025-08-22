@@ -8,6 +8,6 @@ Para construir y correr la aplicacion necesitas:
 - [MySQL 8.0](https://dev.mysql.com/downloads/installer/)
 ## Como ejecutar la aplicacion:
 
-Hay varias formas de ejecutar una aplicación Spring Boot en su máquina local. Una forma es ejecutar el método `main`  en la clase`com.example.quejapp.QuejappApplication`  de aplicación desde su IDE. Previo a esto, tiene que configurar el archivo `application.properties` con los datos de conexión a su base de datos MySQL.
+Hay varias formas de ejecutar una aplicación Spring Boot en su máquina local. Una forma es ejecutar el método `main`  en la clase`com.example.quejapp.QuejappApplication`  de aplicación desde su IDE. Previo a esto, tiene que configurar el archivo `application.properties` con los datos de conexión a su base de datos MongoDb.
 ## Copyright
 Released under the Apache License 4.0. See the [LICENSE](https://github.com/jtejadap/QuejappAPI) file.
