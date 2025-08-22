@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+<body>
+<header th:fragment="navbar" class="p-3 mb-3 border-bottom naranja-transcaribe sticky-top">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <h4 class="text-white kanit-bold">QUEJAPP</h4>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-1">
+                <li><a href="/dashboard" class="nav-link px-2 link-secondary text-white">Dashboard</a></li>
+            </ul>
+
+            <!-- Mostrar solo cuando NO está autenticado -->
+            <div class="text-end" sec:authorize="!isAuthenticated()">
+                <a href="/login" class="btn btn-outline-light me-2">Iniciar</a>
+                <a href="/signup" class="btn btn-warning">Registrarse</a>
+            </div>
+
+            <!-- Mostrar solo cuando SÍ está autenticado -->
+            <div class="d-flex align-items-center" sec:authorize="isAuthenticated()">
+                <span class="text-white me-3" th:text="${'Bienvenido, ' + #authentication.name}"></span>
+                <form th:action="@{/logoutUser}" method="post">
+                    <button type="submit" class="btn btn-outline-light me-2">Salir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

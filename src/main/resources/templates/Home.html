@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuejaAPP</title>
+     <!-- Instalacion fuentes de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Estilos personalizados-->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body class="regular color-fondo">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <header class="p-3 border-bottom naranja-transcaribe sticky-top">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/static" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <h4 class="text-white kanit-bold">QUEJAPP</h4>
+              </a>
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-1">
+                  <li><a href="/dashboard" class="nav-link px-2 link-secondary text-white">Dashboard</a></li>
+              </ul>
+
+              <div class="text-end" sec:authorize="!isAuthenticated()">
+                  <a href="/login" class="btn btn-outline-light me-2">Iniciar</a>
+                  <a href="/signup" class="btn btn-warning">Registrarse</a>
+              </div>
+
+              <div class="dropdown text-end"  sec:authorize="isAuthenticated()">
+                  <button th:text="${'Bienvenido '+ #authentication.name}" type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 text-white">
+                  </button>
+              </div>
+              <form sec:authorize="isAuthenticated()" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"  th:action="@{/logoutUser}" method="post">
+                  <button type="submit" class="btn btn-outline-light me-2" value="Sign Out">
+                      Salir
+                  </button>
+              </form>
+
+
+          </div>
+        </div>
+      </header>
+
+    <div id="carouselComponent" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active item-height">
+                <img src="/assets/bus1.jpeg" class="d-block w-100 item-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Transporte mas digno</h2>
+                    <p>Contribuya al mejoramiento de la calidad de servicio de transporte de todos.</p>
+                </div>
+            </div>
+            <div class="carousel-item item-height">
+                <img src="/assets/bus2.jpeg" class="d-block w-100 item-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Reporte al instante</h2>
+                    <p>Realize reportes de incidentes cuando usted prefiera con los servicios de nuestro software.</p>
+                </div>
+            </div>
+            <div class="carousel-item item-height">
+                <img src="/assets/castillo.jpeg" class="d-block w-100 item-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Cultura Ciudadana</h2>
+                    <p>Ayude a darle visibilidad a los aspectos a mejorar en el transporte en la ciudad.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselComponent" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselComponent" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container text-center">
+        <div class="row mb-4">
+            <div class="col-3 ">
+                <div class="card h-100">
+                    <img src="/assets/Clasificacion.svg" class="card-img-top pt-3" alt="..." width="100px" height="100px">
+                    <div class="card-body">
+                        <h5 class="card-title">Clasificación de incidentes</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ">
+                <div class="card h-100">
+                    <img src="/assets/Reporte.svg" alt="..." class="card-img-top pt-3" width="100px" height="100px">
+                    <div class="card-body">
+                        <h5 class="card-title">Reporte de quejas e incidentes</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ">
+                <div class="card h-100">
+                    <img src="/assets/Sumatoria.svg" alt="..." class="card-img-top pt-3" width="100px" height="100px">
+                    <div class="card-body">
+                        <h5 class="card-title">Sumarización de incidentes</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ">
+                <div class="card h-100">
+                    <img src="/assets/Solucion.svg" alt="..." class="card-img-top pt-3" width="100px" height="100px">
+                    <div class="card-body">
+                        <h5 class="card-title">Informes de casos solucionados</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider-margin"/>
+        <div class="row  align-items-center">
+            <div class="col-7">
+                <h2 class="fw-normal lh-1">Mejoremos el transporte público en nuestra ciudad <span class="text-body-secondary">Reporte sus quejas e incidentes</span></h2>
+                <p class="lead"><strong class="kanit-bold">QUEJAPP</strong> es una aplicación web para el reporte de incidentes en el sistema de transporte masivo de la ciudad de Cartagena (TransCaribe).</p>
+            </div>
+            <div class="col-5">
+                <img src="/assets/queja.svg" class="bd-placeholder-img  img-fluid mx-auto img-thumbnail" width="300" height="300" alt="...">
+            </div>
+        </div>
+        <hr class="divider-margin"/>
+    </div>
+    <footer class="container">
+        <p class="float-right"><a href="#">Ir al principio</a></p>
+        <p>© 2023-2024 Quejapp S.A · <a href="#">Privacidad</a> · <a href="#">Terminos y condiciones</a></p>
+    </footer>
+  </body>
+</html>

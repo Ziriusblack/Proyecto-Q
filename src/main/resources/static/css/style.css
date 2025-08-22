@@ -1,0 +1,125 @@
+/*
+Importe de Fuente Kanit
+*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;700&display=swap');
+
+/*
+Importe de Fuente Montserrat
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.kanit-light {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.kanit-regular {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kanit-bold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.montserrat-medium {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.montserrat-bold{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.naranja-transcaribe{
+    background-color: #F18A2B;
+}
+.naranja-transcaribe-fuente{
+    color: #F18A2B;
+}
+.color-fondo{
+    background-color: #F4F6FA;
+}
+.color-fondo-etiqueta{
+    background-color: #fcf6ed;
+}
+.color-usuario{
+    color: #f2af74;
+}
+.color-queja{
+    color:#74adf2;
+}
+.sticky-top{
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.caja-iniciar-sesion{
+    position: relative;
+    max-width: 440px;
+    width: calc(100% - 40px);
+    padding: 44px;
+    margin: 10ch auto 28px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    min-width: 320px;
+    min-height: 338px;
+    overflow: hidden;
+}
+
+.bd-sidebar {
+    position: sticky;
+    top: 5rem;
+    display: block !important;
+    height: calc(100vh - 6rem);
+    padding-left: .25rem;
+    margin-left: -.25rem;
+    overflow-y: auto;
+}
+
+.item-height{
+    height: 50vh;
+}
+
+.item-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    filter: blur(8px)
+}
+
+.divider-margin{
+    margin: 5rem 0;
+}
+
+.quit-underline{
+    text-decoration: none;
+}
+
+.error-font-size{
+    font-size: 20vh;
+}
+.error-button-size{
+    width: 10vh;
+}
+.back-button-size{
+    width: 20vh;
+}
